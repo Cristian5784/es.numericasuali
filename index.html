@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EsNumeriCas</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function generateRandomInteger(min, max) {
+        let casNumb = Math.random()
+        casNumb = casNumb * max
+        casNumb = parseInt(casNumb)
+        return casNumb
+        }
+
+        function sanitize(n){
+        n= n.trim()
+        return n
+        }
+        let i=0
+        let casNumb=generateRandomInteger(1,100)
+        n=0
+        do{
+        n=prompt("indovina il numero casuale da 1 a 100")
+        while(n===null){
+            n=prompt("indovina il numero casuale da 1 a 100")
+        }
+        n=sanitize(n)
+        n = parseInt(n)
+        if(n===casNumb){
+            console.log("Hai inserito il numero corretto")
+        }else{
+            if(n<casNumb){
+                console.log("Hai inserito un numero minore")
+            }else{
+                console.log("Hai inserito un numero maggiore")
+            }
+        }
+        i=i+1
+    }while(i<5 && n!==casNumb)
+
+    </script>
+</body>
+</html>
